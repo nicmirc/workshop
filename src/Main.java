@@ -7,17 +7,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("-------Teme----------------");
-            System.out.println("1 - Odd/Even");
-            System.out.println("2 - Positive/Negative/Zero");
-            System.out.println("3 - An bisect");
-            System.out.println("4 - Aria triunghiului");
-            System.out.println("5 - Convertor distanta");
-            System.out.println("6 - Convertor temperatura");
-            System.out.println("7 - Calculator comision");
+            System.out.println("   -Part 1-                                -Part 2-");
+            System.out.println("1 - Odd/Even                           13 - Multiplication Table");
+            System.out.println("2 - Positive/Negative/Zero             14 - Even or Odd");
+            System.out.println("3 - An bisect                          15 - Factorial");
+            System.out.println("4 - Aria triunghiului                  16 - Prime Number Checker");
+            System.out.println("5 - Convertor distanta                 17 - Fibonacci Sequence");
+            System.out.println("6 - Convertor temperatura              18 - Sum of Digits");
+            System.out.println("7 - Calculator comision                19 - Reverse Number");
             System.out.println("8 - Calculator salar");
             System.out.println("9 - Mad Libs");
             System.out.println("10 - Quiz");
             System.out.println("12 - Discount");
+            System.out.println();
 
             System.out.println("0 - Exit");
             System.out.print("Alege tema: ");
@@ -120,6 +122,64 @@ public class Main {
                 double discount = scanner.nextDouble();
                 discountCalculator.setDiscount(discount);
                 System.out.println("Pretul final este: " + discountCalculator.calcPretFinal());
+                System.out.println();
+            }
+            else if (tema == 13) {
+                System.out.println("Insert a number: ");
+                int numar = scanner.nextInt();
+                MultiplicationTable multiplicationTable = new MultiplicationTable();
+                multiplicationTable.displayTable(numar);
+                System.out.println();
+            }
+            else if (tema == 14) {
+                EvenOdd evenOdd = new EvenOdd();
+                evenOdd.evenOdd();
+            }
+            else  if (tema == 15) {
+                System.out.print("Insert a number: ");
+                Factorial factorial = new Factorial();
+                int number = scanner.nextInt();
+                if (number >= 0 ) {
+                    System.out.println("The factorial of " + number + " is " + factorial.calcFactorial(number));
+                }
+                else System.out.println("The number is negative. The factorial can't be calculated");
+            }
+            else if (tema == 16) {
+                System.out.print("Insert a number: ");
+                int number = scanner.nextInt();
+                PrimeChecker primeChecker = new PrimeChecker();
+                if ((number <= 1) || !primeChecker.checker(number)) {
+                    System.out.println(number + " is not a prime number.");
+                }
+                else System.out.println(number + " is a prime number.");
+            }
+            else if (tema == 17) {
+                System.out.print("Enter a positive number up to which to display the Fibonacci sequence: ");
+                int number = scanner.nextInt();
+                Fibonacci fibonacci = new Fibonacci();
+                if (number >=0) {
+                    fibonacci.sequence(number);
+                }
+                else System.out.println("The number you entered is negative.");
+            }
+            else if (tema == 18) {
+                System.out.print("Enter a positive number: ");
+                int number = scanner.nextInt();
+                DigitsSum digitsSum = new DigitsSum();
+                if (number >= 0) {
+                    System.out.println("The sum of the digits is " + digitsSum.calcSum(number));
+                }
+                else System.out.println("The number you entered is negative.");
+                System.out.println();
+            }
+            else if (tema == 19) {
+                System.out.print("Enter a positive number: ");
+                int number = scanner.nextInt();
+                ReverseNumber reverseNumber = new ReverseNumber();
+                if (number >=0) {
+                    System.out.println("The number reversed is: " + reverseNumber.reverse(number));
+                }
+                else System.out.print("The number you entered is not positive.");
                 System.out.println();
             }
             else if (tema == 0) {

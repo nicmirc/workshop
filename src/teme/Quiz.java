@@ -17,7 +17,7 @@ public class Quiz {
         System.out.println("Raspuns: ");
         raspuns = scanner.nextLine();
         System.out.println("-----------------------------------");
-        if (Objects.equals(raspuns, raspuns1)) {
+        if (raspuns == raspuns1) {
             scor = scor + 1;
         }
         System.out.println("Q2: Ce se poarta pe cap?");
